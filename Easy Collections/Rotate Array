@@ -1,0 +1,21 @@
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        if k > len(nums):
+            k = k % len(nums)
+        else:
+            pass
+        temp = []
+        x = 0
+        y = 0
+        for i in range(len(nums)):
+            temp.append(nums[x])
+            y = len(nums) - k + i 
+            if y < (len(nums)):  
+                nums[x] = nums[y] 
+                x += 1
+            else: 
+                nums[x] = temp[y-len(nums)]
+                x += 1
