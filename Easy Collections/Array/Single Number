@@ -1,0 +1,10 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        if len(nums) < 2:
+            return nums[0]
+        temp = sorted(nums)
+        for i in range(len(temp)-1):
+            if temp[i] != temp[i+1] and temp[i] != temp[i-1]:
+                return temp[i]
+        if temp[len(temp)-1] != temp[len(temp)-2]:
+            return temp[len(temp)-1]
