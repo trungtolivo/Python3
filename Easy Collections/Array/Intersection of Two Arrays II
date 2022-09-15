@@ -1,0 +1,20 @@
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        temp = []
+        k = 0
+        h = 0
+        temp1 = sorted(nums1)
+        temp2 = sorted(nums2)
+        while k < len(temp1):
+            if h > (len(temp2) - 1):
+                h = 0
+                k += 1
+            else:
+                if temp1[k] == temp2[h]:
+                    del temp2[h]
+                    temp.append(temp1[k])
+                    h = 0
+                    k += 1
+                else:
+                    h += 1
+        return temp
