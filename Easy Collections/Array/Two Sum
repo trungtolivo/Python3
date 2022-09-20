@@ -1,0 +1,15 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        temp = []
+        nums2 = nums
+        for i in range(len(nums)):
+            if (target - nums[i] in nums2) and (i != nums.index(target-nums[i])):
+                temp.append(i)
+                temp.append(nums.index(target-nums[i]))
+                break
+            else:
+                pass
+        if len(temp) < 1:
+            return None
+        else:
+            return temp
