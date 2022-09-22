@@ -1,0 +1,15 @@
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        k = -1
+        s1 = []
+        while k >= -len(s):
+            s1.append(s[k])
+            k -= 1
+        k = 0
+        while k < len(s):
+            for n in range(len(s)):
+                s[n] = s1[k]
+                k += 1
