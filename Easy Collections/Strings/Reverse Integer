@@ -1,0 +1,17 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        x1 = []
+        if str(x)[0] == '-':
+            x1.append(str(x)[0])
+        else:
+            pass
+        for i in reversed(range(len(str(x)))):
+            if str(x)[i] != '-':
+                x1.append(str(x)[i])
+            else:
+                pass
+        x = int("".join(x1))
+        if x in range(-2**31,2**31-1):
+            return x
+        else:
+            return 0
