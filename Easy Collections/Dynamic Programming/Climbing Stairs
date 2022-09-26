@@ -1,0 +1,7 @@
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        fibo = {1:1,2:2}
+        if n > 2:
+            for i in range(3,n+1):
+                fibo[i] = fibo[i-2] + fibo[i-1]
+        return fibo[n]
