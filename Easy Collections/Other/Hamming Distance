@@ -1,0 +1,20 @@
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        if y >= x:
+            x_bin = "{0:b}".format(int(x))
+            y_bin = "{0:b}".format(int(y))
+        else:
+            x_bin = "{0:b}".format(int(y))
+            y_bin = "{0:b}".format(int(x))
+        k = -1
+        count = 0
+        while abs(k) <= max(len(x_bin),len(y_bin)):
+            if len(x_bin) >= abs(k) and x_bin[k] != y_bin[k]:
+                count += 1
+                k -= 1
+            elif len(x_bin) < abs(k) and y_bin[k] == '1':
+                count += 1
+                k -= 1
+            else:
+                k -= 1
+        return count
