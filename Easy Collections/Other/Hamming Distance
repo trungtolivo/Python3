@@ -8,7 +8,7 @@ class Solution:
             y_bin = "{0:b}".format(int(x))
         k = -1
         count = 0
-        while abs(k) <= max(len(x_bin),len(y_bin)):
+        while abs(k) <= len(y_bin):
             if len(x_bin) >= abs(k) and x_bin[k] != y_bin[k]:
                 count += 1
                 k -= 1
